@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <clipPath id="rounded-corners">
+      <rect x="0" y="0" width="128" height="128" rx="28" ry="28" />
+    </clipPath>
+  </defs>
+  
+  <!-- Rounded image with applied clip path -->
+  <image x="0" y="0" width="128" height="128" href="/public/image.png" clip-path="url(#rounded-corners)" />
+  
+  <!-- Optional: subtle border for definition -->
+  <rect x="0" y="0" width="128" height="128" rx="28" ry="28" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1" />
+</svg>

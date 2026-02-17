@@ -1,0 +1,71 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap");
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --accent: #14b8a6;
+  --ink: #0f172a;
+  --muted: #475569;
+  --surface: #ffffff;
+  --surface-muted: #f8fafc;
+  --border-color: #e2e8f0;
+  --ring: rgba(37, 99, 235, 0.25);
+  --shadow-sm: 0 1px 2px 0 rgb(15 23 42 / 0.06);
+  --shadow-md: 0 8px 20px -10px rgb(15 23 42 / 0.4);
+  --shadow-lg: 0 20px 35px -25px rgb(15 23 42 / 0.5);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Manrope", "IBM Plex Sans", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(20, 184, 166, 0.14), transparent 45%),
+    radial-gradient(circle at 90% 5%, rgba(37, 99, 235, 0.12), transparent 40%),
+    linear-gradient(180deg, #f8fafc 0%, #f1f5f9 60%, #eef2f7 100%);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
