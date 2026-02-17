@@ -1,94 +1,152 @@
-﻿AI-Powered Student Assistant
+# AI-Powered Student Assistant
 
-MERN Stack + Gemini AI Integration
+![MERN](https://img.shields.io/badge/MERN-Stack-000000?style=for-the-badge)
+![AI](https://img.shields.io/badge/Gemini-AI-000000?style=for-the-badge)
+![Full Stack](https://img.shields.io/badge/Full--Stack-Project-000000?style=for-the-badge)
 
-Overview
+## 📌 Overview
 
-This project is a MERN-based web application that allows users to input text or questions, select a task mode, and receive an AI-generated response. It demonstrates backend AI integration, structured prompt engineering, and clean service-layer architecture.
+AI-Powered Student Assistant is a full-stack MERN web application that allows users to input text or questions, choose a task mode, and receive AI-generated responses in real time.
 
-Features
+The project demonstrates production-ready backend architecture, structured prompt engineering, secure API integration, and clean separation of concerns.
 
-Multiple task modes:
+---
 
-Explain concepts
+## 🌐 Live Demo
 
-Generate MCQs
+**Frontend:** https://ai-student-assistant-ten.vercel.app  
+**Backend API:** https://ai-student-assistant-l095.onrender.com  
 
-Summarize text
+---
 
-Improve writing
+## ✨ Key Features
 
-Structured prompts with guardrails
+- Multiple AI task modes:
+  - Concept explanation
+  - MCQ generation
+  - Text summarization
+  - Writing improvement
+- Structured prompts with guardrails
+- Real-time AI responses
+- JWT-based authentication
+- Chat history storage
+- Loading states & error handling
+- Clean layered architecture  
+  *(Routes → Controllers → Services)*
+- Responsive user interface
 
-Loading states and error handling
+---
 
-REST API integration
+## 🛠️ Tech Stack
 
-Separation of concerns (routes → controllers → services)
+![React](https://img.shields.io/badge/React-000000?style=for-the-badge&logo=react)
+![Vite](https://img.shields.io/badge/Vite-000000?style=for-the-badge&logo=vite)
+![JavaScript](https://img.shields.io/badge/JavaScript-000000?style=for-the-badge&logo=javascript)
+![Node.js](https://img.shields.io/badge/Node.js-000000?style=for-the-badge&logo=node.js)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express)
+![MongoDB](https://img.shields.io/badge/MongoDB-000000?style=for-the-badge&logo=mongodb)
+![JWT](https://img.shields.io/badge/JWT-Authentication-000000?style=for-the-badge&logo=jsonwebtokens)
+![Git](https://img.shields.io/badge/Git-000000?style=for-the-badge&logo=git)
+![Gemini](https://img.shields.io/badge/Gemini-AI-000000?style=for-the-badge&logo=google)
 
-Tech Stack
+---
 
-Frontend: React (Vite)
-Backend: Node.js, Express
-AI Service: Google Gemini API
+## 🧩 System Architecture
 
-Project Structure
+```
+Frontend (React + Vite)
+        │
+        ▼
+Backend API (Node.js + Express)
+        │
+        ▼
+Google Gemini AI Service
+        │
+        ▼
+MongoDB Atlas Database
+```
+
+---
+
+## 📂 Project Structure
+
+```
 client/
-  src/
-    components/
-    pages/
-    services/
+ ├── src/
+ │   ├── components/
+ │   ├── pages/
+ │   └── services/
 
 server/
-  routes/
-  controllers/
-  services/
-    ai.service.js
-  server.js
+ ├── routes/
+ ├── controllers/
+ ├── services/
+ │   └── ai.service.js
+ └── server.js
+```
 
-Setup Instructions
-Backend
+---
+
+## ⚙️ Local Setup Instructions
+
+### Backend
+
+```bash
 cd server
 npm install
 cp .env.example .env
+```
 
+Update `.env`:
 
-Update .env:
-
+```
 PORT=5000
-AI_API_KEY=your_api_key_here
-JWT_SECRET=your_long_random_secret
-MONGODB_URI=mongodb+srv://<user>:<password>@<cluster>.mongodb.net/ai-student-assistant?retryWrites=true&w=majority
+AI_API_KEY=your_gemini_api_key
+JWT_SECRET=your_secure_secret
+MONGODB_URI=your_mongodb_connection_string
+NODE_ENV=development
+```
 
+Start backend:
 
-Start server:
-
+```bash
 npm run dev
+```
 
+Backend URL:  
+http://localhost:5000
 
-Backend runs at: http://localhost:5000
+---
 
-Frontend
+### Frontend
+
+```bash
 cd client
 npm install
 npm run dev
+```
 
+Frontend URL:  
+http://localhost:5173
 
-Frontend runs at: http://localhost:5173
+---
 
-API Endpoints
-POST /api/ai/generate
+## 📡 API Endpoints
+
+### POST `/api/ai/generate`
 
 Request:
 
+```json
 {
   "prompt": "Explain JavaScript closures",
   "mode": "explain"
 }
-
+```
 
 Response:
 
+```json
 {
   "success": true,
   "data": {
@@ -96,59 +154,74 @@ Response:
     "response": "..."
   }
 }
+```
 
-GET /api/ai/modes
+---
+
+### GET `/api/ai/modes`
 
 Returns available task modes.
 
-Prompt Engineering Approach
+---
 
-User input is wrapped in structured prompts before being sent to the AI model. Each prompt includes:
+## 🧠 Prompt Engineering Strategy
 
-Role definition
+User input is wrapped inside structured prompts before being sent to the AI model.
 
-Context specification
+Each prompt includes:
 
-Explicit rules and constraints
+- Role definition
+- Context specification
+- Explicit rules & constraints
+- Output format instructions
+- Guardrails to reduce hallucinations
 
-Output format instructions
+Different modes use specialized templates to ensure accuracy and consistency.
 
-Guardrails to reduce hallucination
+---
 
-Different task modes use tailored prompt templates to ensure consistent and relevant responses.
+## 🔐 Environment Variables
 
-Environment Variables
-AI_API_KEY=your_api_key_here
-JWT_SECRET=your_long_random_secret
-MONGODB_URI=mongodb+srv://<user>:<password>@<cluster>.mongodb.net/ai-student-assistant?retryWrites=true&w=majority
+```
+AI_API_KEY=your_api_key
+JWT_SECRET=your_secret
+MONGODB_URI=your_connection_string
 PORT=5000
+NODE_ENV=production
+```
 
+⚠️ Never commit real secrets.  
+Use `.env.example` as a template.
 
-Do not commit real API keys. Use .env.example as a template.
+---
 
-Deployment
+## 🌍 Deployment
 
-Backend: Render (or any Node.js host)
+- Frontend → Vercel  
+- Backend → Render  
+- Database → MongoDB Atlas  
+- AI Service → Google Gemini API  
 
-Frontend: Vercel
+Ensure environment variables are configured on the hosting platform.
 
-Set AI_API_KEY, JWT_SECRET, and MONGODB_URI on the backend host
+---
 
-Assignment Checklist
+## ✅ Assignment Objectives Covered
 
-MERN-based full-stack application
+- Full-stack MERN application  
+- AI integration via service layer  
+- Structured prompt engineering  
+- Secure authentication  
+- Input validation & error handling  
+- Clean scalable architecture  
+- Production deployment  
 
-AI integration via service layer
+---
 
-Structured prompt engineering
+## 👨‍💻 Author
 
-Input validation and error handling
+**Om Maurya**  
+B.Tech — Computer Science Engineering  
+Kamla Nehru Institute of Technology (KNIT), Sultanpur  
 
-Multiple task modes
-
-Clean project architecture
-
-Author
-
-Om Maurya
-B.Tech CSE, KNIT Sultanpur
+GitHub: https://github.com/ommaurya-pivetra
