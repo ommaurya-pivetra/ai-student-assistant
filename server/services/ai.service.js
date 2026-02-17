@@ -154,7 +154,8 @@ ${promptConfig.format}`;
       });
 
       const response = result.response;
-            throw new Error('Failed to parse MCQ response: no valid JSON structure found.');
+      const responseText = response.text();
+
 
       if (mode === 'mcq') {
         try {
