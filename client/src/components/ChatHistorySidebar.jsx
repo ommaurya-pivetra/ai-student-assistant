@@ -57,15 +57,16 @@ const ChatHistorySidebar = ({ onSelectChat, currentChatId, isOpen, user, refresh
     }
   };
 
+  const handleSelectChatItem = (chatId) => {
+    setAccountMenuOpen(false);
+    onSelectChat(chatId);
+  };
+
   const handleClearHistory = async () => {
     if (window.confirm('Are you sure you want to delete all chats?')) {
       try {
         await clearChatHistory();
         setHistory([]);
-        const handleSelectChatItem = (chatId) => {
-          setAccountMenuOpen(false);
-          onSelectChat(chatId);
-        };
       } catch (err) {
         console.error('Failed to clear history:', err);
       }
